@@ -12,6 +12,11 @@ vim.g.rustfmt_autosave = 1
 require("plugins")
 require("opts")
 
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+
 -- ===== Completion (nvim-cmp) =====
 local cmp = require("cmp")
 cmp.setup({
@@ -85,3 +90,13 @@ require("mason").setup({
   },
 })
 
+require("aerial").setup({
+  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+    vim.keymap.set("n", "}", "<cmd>AerialNext<CR>", { buffer = bufnr })
+  end,
+})
+-- You probably also want to set a keymap to toggle aerial
+vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
