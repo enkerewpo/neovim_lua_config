@@ -17,6 +17,8 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 
+vim.g.mapleader = " "
+
 -- ===== Completion (nvim-cmp) =====
 local cmp = require("cmp")
 cmp.setup({
@@ -108,16 +110,12 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
--- OR setup with some options
 require("nvim-tree").setup({
   sort = {
     sorter = "case_sensitive",
   },
   view = {
-    width = 30,
+    width = 40,
   },
   renderer = {
     group_empty = true,

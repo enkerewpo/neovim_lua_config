@@ -32,5 +32,12 @@ return require('packer').startup(function(use)
         'nvim-tree/nvim-web-devicons', -- optional
         },
     }
+    use {
+        's1n7ax/nvim-terminal',
+        config = function()
+            vim.o.hidden = true
+            require('nvim-terminal').setup()
+        end,
+    }
 end)
 

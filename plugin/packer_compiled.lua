@@ -141,6 +141,12 @@ _G.packer_plugins = {
     path = "/home/wheatfox/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-terminal"] = {
+    config = { "\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0" },
+    loaded = true,
+    path = "/home/wheatfox/.local/share/nvim/site/pack/packer/start/nvim-terminal",
+    url = "https://github.com/s1n7ax/nvim-terminal"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/wheatfox/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
@@ -179,6 +185,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-terminal
+time([[Config for nvim-terminal]], true)
+try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
+time([[Config for nvim-terminal]], false)
 -- Config for: git-conflict.nvim
 time([[Config for git-conflict.nvim]], true)
 try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17git-conflict\frequire\0", "config", "git-conflict.nvim")
