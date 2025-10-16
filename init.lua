@@ -100,3 +100,32 @@ require("aerial").setup({
 })
 -- You probably also want to set a keymap to toggle aerial
 vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
+
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- optionally enable 24-bit colour
+vim.opt.termguicolors = true
+
+-- empty setup using defaults
+require("nvim-tree").setup()
+
+-- OR setup with some options
+require("nvim-tree").setup({
+  sort = {
+    sorter = "case_sensitive",
+  },
+  view = {
+    width = 30,
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+-- add nvim-tree toggle shortcut on <F9>
+vim.keymap.set("n", "<F9>", ":NvimTreeToggle<CR>")
